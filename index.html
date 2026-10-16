@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Cecil | Academic Website</title>
-  <meta name="description" content="The academic website of Dr. Cecil is coming soon." />
+  <meta name="description" content="Dr. Cecil’s academic website is coming soon. Stay tuned for research, publications, and academic updates." />
   <style>
     :root {
       --bg: #f8f7f3;
@@ -126,17 +126,41 @@
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      min-height: calc(100vh - 96px);
+      min-height: calc(90vh - 96px);
       display: flex;
       align-items: center;
-      padding: 40px 0 90px;
+      padding: 60px 0 90px;
     }
 
     .hero-layout {
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 72px;
-      align-items: center;
+      display: block;
+      max-width: 940px;
+    }
+
+    .hero-copy {
+      padding: 24px 0 10px;
+    }
+
+    .coming-soon {
+      margin-top: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.15rem, 8vw, 6.2rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+      color: #6f8ea9;
+    }
+
+    .coming-soon span {
+      color: #b7c9d8;
+    }
+
+    .stay-tuned {
+      margin-top: 26px;
+      font-weight: 500;
+      font-size: 1.02rem;
+      letter-spacing: 0.03em;
+      color: #667e95;
     }
 
     .eyebrow {
@@ -177,70 +201,6 @@
       letter-spacing: 0.01em;
     }
 
-    .hero-art {
-      position: relative;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .sheet {
-      position: absolute;
-      width: 100%;
-      max-width: 390px;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.75);
-      box-shadow: var(--shadow);
-      border-radius: 26px;
-      padding: 28px 28px 32px;
-      transition: transform 0.5s ease;
-    }
-
-    .sheet::before {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(120, 149, 178, 0.08);
-      pointer-events: none;
-    }
-
-    .sheet.back {
-      transform: translate(-36px, 24px) rotate(-7deg);
-      opacity: 0.82;
-    }
-
-    .sheet.front {
-      transform: translate(26px, -18px) rotate(5deg);
-    }
-
-    .hero-art:hover .sheet.back {
-      transform: translate(-42px, 18px) rotate(-9deg);
-    }
-
-    .hero-art:hover .sheet.front {
-      transform: translate(32px, -22px) rotate(7deg);
-    }
-
-    .sheet-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.45rem;
-      margin: 0 0 18px;
-      font-weight: 500;
-    }
-
-    .line {
-      height: 11px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(120,149,178,0.22), rgba(120,149,178,0.08));
-      margin-bottom: 12px;
-    }
-
-    .line.short { width: 44%; }
-    .line.medium { width: 67%; }
-    .line.long { width: 88%; }
 
     section {
       padding: 60px 0;
@@ -365,16 +325,7 @@
     }
 
     @media (max-width: 980px) {
-      .hero { min-height: auto; padding-top: 20px; }
-      .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-      .hero-art {
-        min-height: 430px;
-        order: -1;
-      }
-      .sheet { max-width: 330px; }
+      .hero { min-height: 70vh; }
     }
 
     @media (max-width: 720px) {
@@ -398,16 +349,7 @@
         line-height: 1.8;
         font-size: 1rem;
       }
-      .hero-art {
-        min-height: 320px;
-      }
-      .sheet {
-        max-width: 260px;
-        padding: 22px 20px 24px;
-        border-radius: 22px;
-      }
-      .sheet.front { transform: translate(14px, -8px) rotate(4deg); }
-      .sheet.back { transform: translate(-18px, 14px) rotate(-5deg); }
+      .coming-soon { font-size: clamp(2.8rem, 11vw, 4.4rem); }
       .simple-list li {
         flex-direction: column;
         gap: 8px;
@@ -438,32 +380,15 @@
     <main>
       <section class="hero">
         <div class="container hero-layout">
-          <div>
+          <div class="hero-copy">
             <div class="eyebrow reveal">Academic Website</div>
             <h1 class="reveal delay-1">Dr. Cecil</h1>
-            <p class="lead reveal delay-2">
-              A simple and modern academic website is coming soon. This space will present Dr. Cecil’s educational background, publications, and research summaries in a clear and professional format.
+            <div class="coming-soon reveal delay-2">Coming Soon<span aria-hidden="true">.</span></div>
+            <p class="lead reveal delay-3">
+              A new academic website is on the way. Explore Dr. Cecil’s academic background,
+              research, and publications when the site launches.
             </p>
-            <p class="hero-note reveal delay-3">
-              Content is currently being prepared for upcoming university applications and interviews.
-            </p>
-          </div>
-
-          <div class="hero-art reveal delay-4" aria-hidden="true">
-            <div class="sheet back">
-              <h3 class="sheet-title">Research Summary</h3>
-              <div class="line long"></div>
-              <div class="line medium"></div>
-              <div class="line long"></div>
-              <div class="line short"></div>
-            </div>
-            <div class="sheet front">
-              <h3 class="sheet-title">Curriculum Vitae</h3>
-              <div class="line medium"></div>
-              <div class="line long"></div>
-              <div class="line medium"></div>
-              <div class="line short"></div>
-            </div>
+            <p class="stay-tuned reveal delay-4">Stay tuned for updates.</p>
           </div>
         </div>
       </section>
